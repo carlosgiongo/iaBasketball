@@ -7,16 +7,16 @@
 #include <string>
 
 class Player {
-public:
-    // Constructor
-    Player(std::string name, int number);
+    public:
+        Player(std::string name, int number, double height);
+        int _number;
+        double _height;
+        std::string _name;
 
-    // Atributes
-    int _number;
-    std::string _name;
-
-    // Methods
-    std::string getName();
+        [[nodiscard]] double getSpread() const;
+    private:
+        double _spread = 0;
+        void defineSpread();
 };
 
 #endif //TESTE_PLAYER_H
