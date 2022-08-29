@@ -8,12 +8,19 @@
 
 class Player {
     public:
-        Player(std::string name, int number, double height);
+        Player(std::string name, int number, double height, std::string position);
         int _number;
         double _height;
         std::string _name;
+        std::string  _position;
 
-        [[nodiscard]] double getSpread() const;
+        double defineShootGame();
+        double defineHandle();
+        double defineDefensiveGame();
+        double defineJumpGame() const;
+
+        static int getDefaultAtribute(const std::string& position, const std::string& type);
+        static int getRandomizerDefault(const std::string& position, const std::string& type);
     private:
         double _spread = 0;
         void defineSpread();
